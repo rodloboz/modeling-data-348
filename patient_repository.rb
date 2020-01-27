@@ -58,7 +58,7 @@ class PatientRepository
       patient = Patient.new(row)
     end
 
-    # If the CSV is empty (no patients), the @next_id should be 0
+    # If the CSV is empty (no patients), the @next_id should be 1
     # otherwise the @next_id should be the last patient :id plust 1
     @next_id = @patients.empty? ? 1 : @patients.last.id + 1
   end
