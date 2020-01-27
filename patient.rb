@@ -10,6 +10,14 @@ class Patient
   # allows writing and reading of :id and :room
   attr_accessor :id, :room
 
+  # CLASS METHOD to user in the PatientRepository
+  # to write the csv headers
+  #
+  # Patient.csv_headers => [:id, :name, :cured]
+  def self.csv_headers
+    %i[id name illness cured]
+  end
+
   # Is called on Patient.new
   def initialize(attributes = {})
     # Define initial state in instance variables
@@ -21,6 +29,16 @@ class Patient
 
   # Public interface:
   # Implements behaviour
+
+  # INSTANCE METHOD to convert the patient instance
+  # into an array which can be used in the PatientRepository
+  # to write the patient data in the csv
+  #
+  # patient = Patient.new("Mary", "Flu")
+  # patient.to_array => [3, "Mary", "Flu", false]
+  def to_array
+    [id, name, illness, cured]
+  end
 
   # patient = Patient.new("Mary", "Flu")
   # patient.cured? => false
