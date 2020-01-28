@@ -10,7 +10,7 @@ class Patient
   # allows writing and reading of :id and :room
   attr_accessor :id, :room
 
-  # CLASS METHOD to user in the PatientRepository
+  # CLASS METHOD to use in the PatientRepository
   # to write the csv headers
   #
   # Patient.csv_headers => [:id, :name, :cured]
