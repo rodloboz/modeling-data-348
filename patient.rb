@@ -13,7 +13,7 @@ class Patient
   # CLASS METHOD to use in the PatientRepository
   # to write the csv headers
   #
-  # Patient.csv_headers => [:id, :name, :cured]
+  # Patient.csv_headers => [:id, :name, :illness, :cured]
   def self.csv_headers
     %i[id name illness cured]
   end

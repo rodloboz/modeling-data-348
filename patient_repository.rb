@@ -67,7 +67,7 @@ class PatientRepository
     CSV.open(@csv_filepath, 'wb', CSV_DEFAULT_OPTIONS) do |csv|
       # The csv MUST HAVE headers:
       # We can do this by writing the headers ourselves:
-      # csv << [:id, :name, :cured]
+      # csv << [:id, :name, :illness, :cured]
 
       # Or we can teach the class how to do this:
       csv << Patient.csv_headers # CLASS METHOD
